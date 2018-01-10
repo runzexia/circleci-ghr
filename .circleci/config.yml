@@ -30,7 +30,5 @@ workflows:
           requires:
             - go-run
           filters:
-            branches:
-              only: master
             tags:
               only: /^v.*/
