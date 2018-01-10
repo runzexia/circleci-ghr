@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  run:
+  build:
     docker:
       - image: circleci/golang:1.8
     working_directory: /go/src/github.com/runzexia/circleci-ghr
