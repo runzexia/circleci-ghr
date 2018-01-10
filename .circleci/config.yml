@@ -12,8 +12,8 @@ jobs:
       - image: circleci/golang:1.8
       working_directory: /go/src/github.com/runzexia/circleci-ghr
       steps:
-        -run: make dist
-        -run: make release
+        - run: make dist
+        - run: make release
 
 workflows:
   version: 2
