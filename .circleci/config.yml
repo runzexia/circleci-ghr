@@ -32,3 +32,4 @@ workflows:
           filters:
             tags:
               only: /^v.*/
+              ignore: /.*/

@@ -20,7 +20,7 @@ release-tools:
 	@go get github.com/tcnksm/ghr
 
 release: release-tools
-	~/go/bin/ghr $(RELEASE_TAG) ./bin/
+	ghr $(RELEASE_TAG) ./bin/
 
 
 
