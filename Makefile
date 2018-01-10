@@ -17,4 +17,4 @@ dist: dist-tools
 	rm -rf ./bin/hello-world_windows-amd64_$(RELEASE_TAG)
 
 
-.PHONY: all build copy test vet fmt fmtcheck errcheck dist-tools dist
+.PHONY: all dist-tools dist
