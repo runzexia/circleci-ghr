@@ -27,7 +27,7 @@ workflows:
               only: /.*/
       - release:
           requires:
-            - run
+            - go-run
           filters:
             branches:
               only: master
