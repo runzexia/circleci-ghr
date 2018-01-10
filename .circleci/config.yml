@@ -12,7 +12,7 @@ jobs:
       - image: circleci/golang:1.8
     working_directory: /go/src/github.com/runzexia/circleci-ghr
     steps:
-      - run: go run main.go
+      - checkout
       - run: make dist
       - run: make release
 
