@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build:
+  run:
     docker:
       - image: circleci/golang:1.8
     working_directory: /go/src/github.com/runzexia/circleci-ghr
@@ -8,3 +8,28 @@ jobs:
       - checkout
       # specify any bash command here prefixed with `run: `
       - run: go run main.go
+  release:
+    docker:
+      - image: circleci/golang:1.8
+      working_directory: /go/src/github.com/runzexia/circleci-ghr
+      steps:
+        -run: make dist
+        -run: make release
+workflows:
+  version: 2
+  build:
+    jobs:
+      - run:
+          filters:
+            branches:
+              only: /.*/
+            tags:
+              only: /.*/
+      - release:
+          requires:
+            - run
+          filters:
+            branches:
+              only: master
+            tags:
+              only: /.*/

@@ -16,5 +16,13 @@ dist: dist-tools
 	rm -rf ./bin/hello-world_darwin-amd64_$(RELEASE_TAG)
 	rm -rf ./bin/hello-world_windows-amd64_$(RELEASE_TAG)
 
+release-tools:
+	@go get github.com/tcnksm/ghr
 
-.PHONY: all dist-tools dist
+release: release-tools
+	~/go/bin/ghr $(RELEASE_TAG) ./bin/
+
+
+
+
+.PHONY: all dist-tools dist release-tools release
