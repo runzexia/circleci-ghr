@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  run:
+  go-run:
     docker:
       - image: circleci/golang:1.8
     working_directory: /go/src/github.com/runzexia/circleci-ghr
@@ -17,9 +17,9 @@ jobs:
 
 workflows:
   version: 2
-  build:
+  run_release:
     jobs:
-      - run:
+      - go-run:
           filters:
             branches:
               only: /.*/
