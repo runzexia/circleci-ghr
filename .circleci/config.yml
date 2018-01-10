@@ -6,6 +6,5 @@ jobs:
     working_directory: /go/src/github.com/runzexia/circleci-ghr
     steps:
       - checkout
-
       # specify any bash command here prefixed with `run: `
       - run: go run main.go
