@@ -21,7 +21,6 @@ workflows:
   run_release:
     jobs:
       - go-run:
-       filters:
           filters:
             tags:
               only: /.*/
