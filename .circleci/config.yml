@@ -21,12 +21,15 @@ workflows:
   version: 2
   run_release:
     jobs:
-      - go-run
+      - go-run:
+          filters:
+            tags:
+              only: /.*/
+            branches:
+              only: /.*/
       - release:
           requires:
-            - go-run
+            - go-run:
           filters:
             tags:
               only: /^v.*/
-            branches:
-              only: master
