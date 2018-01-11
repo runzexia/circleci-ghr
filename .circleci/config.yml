@@ -27,7 +27,7 @@ workflows:
               only: /.*/
       - release:
           requires:
-            - go-run:
+            - go-run
           filters:
             tags:
               only: /^v.*/
