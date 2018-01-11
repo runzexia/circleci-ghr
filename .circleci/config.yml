@@ -25,11 +25,11 @@ workflows:
           filters:
             tags:
               only: /.*/
-            branches:
-              only: /.*/
       - release:
           requires:
             - go-run
           filters:
             tags:
               only: /^v.*/
+            branches:
+              ignore: /.*/
