@@ -25,7 +25,7 @@ workflows:
           filters:
             tags:
               only: /.*/
-            branch:
+            branches:
               only: /.*/
       - release:
           requires:
