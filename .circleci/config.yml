@@ -25,6 +25,8 @@ workflows:
           filters:
             tags:
               only: /.*/
+            branch:
+              only: /.*/
       - release:
           requires:
             - go-run
