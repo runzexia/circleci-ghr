@@ -13,7 +13,7 @@ jobs:
     working_directory: /go/src/github.com/runzexia/circleci-ghr
     steps:
       - checkout
-      - run: git config --global github.username runzexia
+      - run: git config --global user.name runzexia
       - run: make dist
       - run: make release
 
