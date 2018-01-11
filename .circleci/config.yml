@@ -21,15 +21,9 @@ workflows:
   run_release:
     jobs:
       - go-run:
-          filters:
-            branches:
-              only: /.*/
-            tags:
-              only: /.*/
       - release:
           requires:
             - go-run
           filters:
             tags:
               only: /^v.*/
-              ignore: /.*/
